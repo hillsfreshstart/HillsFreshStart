@@ -1,1 +1,279 @@
-yoooooooooooooooooooo
+<!DOCTYPE html>
+<html>
+<title>HILLS FRESH START</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+<style>
+body {font-family: "Raleway", Arial, sans-serif}
+.w3-row img {margin-bottom: -8px}
+</style>
+<body>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-content" style="max-width:1500px">
+<head>
+    <!-- link to the SqPaymentForm library -->
+    <script type="text/javascript" src="https://js.squareup.com/v2/paymentform">
+    </script>
+
+    <!-- link to the local SqPaymentForm initialization -->
+    <script type="text/javascript" src="sqpaymentform.js">
+    </script>
+    
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    if (SqPaymentForm.isSupportedBrowser()) {
+      paymentForm.build();
+      paymentForm.recalculateSize();
+    }
+  });
+</script>
+
+<style>
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body, html {
+  color: #373F4A;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+}
+
+iframe {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+button {
+  border: 0;
+}
+
+hr {
+  height: 1px;
+  border: 0;
+  background-color: #CCC;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+
+#form-container {
+  position: relative;
+  width: 380px;
+  margin: 0 auto;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0.5;
+  text-transform: uppercase;
+}
+
+.third {
+  float: left;
+  width: calc((100% - 32px) / 3);
+  padding: 0;
+  margin: 0 16px 16px 0;
+}
+
+.third:last-of-type {
+  margin-right: 0;
+}
+
+/* Define how SqPaymentForm iframes should look */
+.sq-input {
+  box-sizing: border-box;
+  border: 1px solid #E0E2E3;
+  border-radius: 4px;
+  outline-offset: -2px;
+  display: inline-block;
+  -webkit-transition: border-color .2s ease-in-out, background .2s ease-in-out;
+     -moz-transition: border-color .2s ease-in-out, background .2s ease-in-out;
+      -ms-transition: border-color .2s ease-in-out, background .2s ease-in-out;
+          transition: border-color .2s ease-in-out, background .2s ease-in-out;
+}
+
+/* Define how SqPaymentForm iframes should look when they have focus */
+.sq-input--focus {
+  border: 1px solid #4A90E2;
+  background-color: rgba(74,144,226,0.02);
+}
+
+
+/* Define how SqPaymentForm iframes should look when they contain invalid values */
+.sq-input--error {
+  border: 1px solid #E02F2F;
+  background-color: rgba(244,47,47,0.02);
+}
+
+#sq-card-number {
+  margin-bottom: 16px;
+}
+
+/* Customize the "Pay with Credit Card" button */
+.button-credit-card {
+  width: 100%;
+  height: 56px;
+  margin-top: 10px;
+  background: #4A90E2;
+  border-radius: 4px;
+  cursor: pointer;
+  display: block;
+  color: #FFFFFF;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-align: center;
+  -webkit-transition: background .2s ease-in-out;
+     -moz-transition: background .2s ease-in-out;
+      -ms-transition: background .2s ease-in-out;
+          transition: background .2s ease-in-out;
+}
+
+.button-credit-card:hover {
+  background-color: #4281CB;
+}
+
+
+#error {
+  width: 100%;
+  margin-top: 16px;
+  font-size: 14px;
+  color: red;
+  font-weight: 500;
+  text-align: center;
+  opacity: 0.8;
+}
+</style>
+
+
+</head>
+
+  <!-- Header -->
+  <header class="w3-container w3-xlarge w3-padding-24 w3-card-4" >
+    <a href="index.html" class="w3-left w3-button w3-white" style="letter-spacing: 10px;">THE HILLS FRESH START</a>
+    <a href="#contact" class="w3-right w3-button w3-white">Contact Us</a>
+    <a href="payment.html" class="w3-right w3-button w3-white">Make A Payment</a>
+  </header>
+
+
+  <br>
+  <!-- Photo Grid -->
+  <div class="w3-row">
+    <div class="w3-half">
+      <img src="home-care.jpg" style="width:100%;opacity:.55;">
+    </div>
+
+  <br>
+  <br>
+
+    <div class="w3-half" id="aboutUs">
+        <h3 class="w3-center">Make Your Payment Here</h3>
+	    
+	    <div id="form-container">
+  <div id="sq-ccbox">
+    <!--
+      Be sure to replace the action attribute of the form with the path of
+      the Transaction API charge endpoint URL you want to POST the nonce to
+      (for example, "/process-card")
+    -->
+    <form id="nonce-form" novalidate action="PATH/TO/PAYMENT/PROCESSING/PAGE" method="post">
+      <fieldset>
+        <span class="label">Card Number</span>
+        <div id="sq-card-number"></div>
+
+        <div class="third">
+          <span class="label">Expiration</span>
+          <div id="sq-expiration-date"></div>
+        </div>
+
+        <div class="third">
+          <span class="label">CVV</span>
+          <div id="sq-cvv"></div>
+        </div>
+
+        <div class="third">
+          <span class="label">Postal</span>
+          <div id="sq-postal-code"></div>
+        </div>
+      </fieldset>
+
+      <button id="sq-creditcard" class="button-credit-card" onclick="requestCardNonce(event)">Pay $1.00</button>
+
+      <div id="error"></div>
+
+      <!--
+        After a nonce is generated it will be assigned to this hidden input field.
+      -->
+      <input type="hidden" id="card-nonce" name="nonce">
+    </form>
+  </div> <!-- end #sq-ccbox -->
+
+</div> <!-- end #form-container -->
+
+    </div>
+  </div>
+  
+
+
+  <br>
+  <br>
+
+  <form class="w3-center" style="margin:auto;width:60%;max-width: 500px;" action="http://74.109.196.127/send_form_email_Hills.php" method="post">
+	<br>
+		<p class="w3-large w3-text-pink w3-center">Do not hesitate to contact us for more information!</p>
+		<p>Give us a call at +1(412)229.7283</p>
+		<p>Send us an email at HillsFreshStart@gmail.com</p>
+		<p>Or fill out this form and we will contact you:</p>
+		<br>
+	    <div class="w3-section">
+	      <label><b>Name</b></label>
+	      <input class="w3-input w3-border" type="text" required name="Name">
+	    </div>
+	    <div class="w3-section">
+	      <label><b>Email</b></label>
+	      <input class="w3-input w3-border" type="text" required name="Email">
+	    </div>
+	    <div class="w3-section">
+	      <label><b>Telephone</b></label>
+	      <input class="w3-input w3-border" type="text" required name="PhoneNumber">
+	    </div>
+	    <div class="w3-section">
+	      <label><b>Message - What kind of services do you require?</b></label>
+	      <textarea class="w3-input w3-border" required name="Message" maxlength="1000" cols="20" rows="4" style="resize: vertical;max-height: 500px"></textarea>
+	    </div>
+	    <button type="submit" class="w3-button w3-block w3-dark-grey">Send</button>
+	
+  </form>
+</div>  
+  <br>
+  <br>
+
+
+<!-- End Page Content -->
+</div>
+
+<!-- Footer / About Section -->
+<footer class="w3-light-grey w3-padding-64 w3-center" id="contact">
+
+  <p>CSS Powered by <a class="w3-hover-text-green">w3.css</a></p>
+</footer>
+ 
+</body>
+
+</html>
+

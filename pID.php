@@ -17,7 +17,12 @@ fclose($handle);
 if($valid === TRUE){
   echo "<script> location.href='https://hillsfreshstart.github.io/HillsFreshStart/paymentConfirm.html'; </script>";
 }else{
-  echo "<script> location.href='http://www.HillsFreshStart.com'; </script>";
+
+  echo '<script>';
+  echo 'alert("Patient ID not found or is not allowed to make a payment at this time.")';
+  echo '</script>';
+  echo "<script>location.href='https://hillsfreshstart.github.io/HillsFreshStart/payment.html'; </script>";
+
 }
 
 

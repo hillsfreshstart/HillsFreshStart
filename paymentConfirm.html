@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
 <style>
 body {font-family: "Raleway", Arial, sans-serif}
 .w3-row img {margin-bottom: -8px}
@@ -81,7 +81,7 @@ body {font-family: "Raleway", Arial, sans-serif}
 					        </div>
 					      </fieldset>
 
-					      <button id="sq-creditcard" class="button-credit-card" onclick="requestCardNonce(event)">Pay $1.00</button>
+					      <button id="sq-creditcard" class="button-credit-card" onclick="requestCardNonce(event)">Pay $100.00</button>
 
 					      <div id="error"></div>
 
@@ -107,54 +107,6 @@ body {font-family: "Raleway", Arial, sans-serif}
 
 						  });
 					</script>
-
-
-					 <!--Your payment page declaration-->
-					 <div id="orderSummary">
-					 
-					  <button id='show-paymentform' onclick='buildForm()'>Pay now</button>
-
-					    <!--Square template form-container div-->
-					    <div id="form-container">
-					       
-					    </div>
-					    <!--end Square template form-container div-->
-					    
-					 </div>
-					 <script type="text/javascript">
-					  function buildForm() {
-					    if (SqPaymentForm.isSupportedBrowser()) {
-					      var paymentDiv = document.getElementById("form-container");
-					      if (paymentDiv.style.display === "none") {
-					          paymentDiv.style.display = "block";
-					      }
-					      paymentForm.build();
-					      paymentForm.recalculateSize();
-					    } else {
-					      // Show a "Browser is not supported" message to your buyer
-					    }
-					  }
-					 </script>
-					 <!--end Your payment page declaration-->
-
-					 <div id="sq-ccbox">
-						  <!--
-						    You should replace the action attribute of the form with the path of
-						    the URL you want to POST the nonce to (for example, "/process-card")
-						  -->
-						  <form id="nonce-form" novalidate action="http://74.109.196.127/payHandler.php" method="post">
-						    Pay with a Credit Card
-
-						    
-
-						    <!--
-						      After a nonce is generated it will be assigned to this hidden input field.
-						    -->
-						    <input type="hidden" id="card-nonce" name="nonce">
-						  </form>
-					</div>
-
-
 
 
 
